@@ -13,7 +13,7 @@ Detailed description and context about the implementation of the exercise is ava
 
 `AlternativeSpaceInvader.st`, this file contains the Smalltalk source code for the Space Invader game exercise, it can be used to review the code as a more readable option before launching it in a Squeak environment.
 
-`SpaceInvader.zip`, this compressed file contains the Squeak image (`.image`) and changes file (`.changes`) necessary to run the exercise.
+`SpaceInvader.rar`, this compressed file contains the Squeak image (`.image`) and changes file (`.changes`) necessary to run the exercise.
 
 ## Download and Run
 
@@ -23,7 +23,7 @@ Detailed description and context about the implementation of the exercise is ava
 2. Install the [Squeak Smalltalk VM](https://squeak.org/downloads/) suitable for the platform/OS in use.
 
 3. To run the exercise:
-- Extract the `SpaceInvader.zip`.
+- Extract the `SpaceInvader.rar`.
 - Launch the Squeak VM and open the `SpaceInvader.image` file.
 - If the game isn't prelaunched, open a workspace, if it isn't as well available when launched, and run the following code to start:
 
