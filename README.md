@@ -15,6 +15,16 @@ Detailed description and context about the implementation of the exercise is ava
 
 `SpaceInvader.rar`, this compressed file contains the Squeak image (`.image`) and changes file (`.changes`) necessary to run the exercise.
 
+### Game Structure
+
+| Class | Description |
+| --- | --- |
+| `SpaceInvader` | Main game window & controller |
+| `Ship` | Player sprite (controls/shoot) |
+| `Enemy` | Enemy sprite (moves back and forth) |
+| `Shot` | Bullet morph (detects collision) |
+| `Score` | Points tracker (updates display) |
+
 ## Download and Run
 
 1. To download and run the exercise, first it is needed to download the latest zip file via github or clone the repository.
