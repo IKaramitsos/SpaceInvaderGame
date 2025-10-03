@@ -31,3 +31,10 @@ Detailed description and context about the implementation of the exercise is ava
 - Spaceship can be be controlled with `arrow keys`, with `spacebar` spaceship shoots, `r` is set to restart enemies entities.
 
 All of those mechanics, keystrokes, look of the game can be changed based on the structured challenges set for university students.
+
+## Helpful Resources
+
+- [Squeak Documentation](https://squeak.org/documentation/)
+- [Smalltalk tutorial](https://learnxinyminutes.com/smalltalk/)
+
+## Cheatsheet
