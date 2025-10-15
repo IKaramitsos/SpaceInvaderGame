@@ -15,7 +15,11 @@ Detailed description and context about the implementation of the exercise is ava
 
 `SpaceInvader.rar`, this compressed file contains the Squeak image (`.image`) and changes file (`.changes`) necessary to run the exercise.
 
-### Game Structure
+`SpaceInvaderVersion`, this folder contains the Smalltalk code needed to create the SpaceInvader Menu preloaded in the image `SpaceInvader_Menu.st`, the SpaceInvader Code of a final version of the game `SpaceInvader_Version_Code.smalltalk` and A RAR file `SpaceInvader_Version.rar` that contains the (`.image`) file, (`.changes`) file, two images (`.png`) for the Spaceship and enemies, as well as two (`.wav`) audio files for shooting and when the enemy is destroyed. 
+
+The images and audio files must be in the same folder with the image for the game to load correctly .
+
+### Game Structure (Base Code)
 
 | Class | Description |
 | --- | --- |
