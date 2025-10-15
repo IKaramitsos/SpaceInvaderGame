@@ -56,3 +56,10 @@ All of those mechanics, keystrokes, look of the game can be changed based on the
 The "Smalltalk Syntax Cheat Sheet" contains a grasp of all the fundamental syntax and knowledge of Smalltalk object-oriented language. It also contains parts of code used in the Space Invader game. A more extended version can be found in the Helpful Resource section above or using the following [Smalltalk Language Notes Cheatsheet](https://www.angelfire.com/tx4/cus/notes/smalltalk.html)
 
 <img width="1067" height="707" alt="Frame 1" src="https://github.com/user-attachments/assets/81044f77-faa7-44b7-818e-c29e403eb6f8" />
+
+### A look of the final version
+
+| Title | Screenshot |
+| --- | --- |
+| `SpaceInvader Menu` | <img width="349" height="248" alt="SpaceInvader_Menu" src="https://github.com/user-attachments/assets/c6a114a6-7d8f-4f9e-b166-e0fc3b279886" /> |
+| `SpaceInvader Game` | <img width="349" height="248" alt="SpaceInvader_Start" src="https://github.com/user-attachments/assets/46024926-e840-4d78-9e91-a830b9565638" /> |
