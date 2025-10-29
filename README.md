@@ -13,6 +13,9 @@ Additional and more thorough educational content and explanation, including rele
 - [Part 4: UI creation and enhancements](#part-4-ui-creation-and-enhancements)
 - [Part 5: Extra features and customizations](#part-5-extra-features-and-customizations)
 
+> [!TIP]
+> Make sure that the Squeak Environment  is set up and running correctly before starting the exercise.
+
 ---
 
 # Part 1: Introduction to the space environment and spaceship
