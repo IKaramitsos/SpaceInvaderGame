@@ -3,7 +3,7 @@ This repository hosts the Space Invader Game, an educational “project” desig
 
 The implementation is organized in a step-by-step structure with five parts, ranging from basic game environment and spaceship creation to more advanced features and customizations. Each part contains clear context, prerequisites, detailed workflow and challenges to encourage creative extensions and further understanding.
 
-Additional and more thorough educational content and explanation, including release versions containing base and extended code are available via the Wiki and Releases sections. 
+Additional and more thorough educational content and explanation, including release versions containing base and extended code are available via the [Wiki](https://github.com/IKaramitsos/SpaceInvaderGame/wiki) and [Releases](https://github.com/IKaramitsos/SpaceInvaderGame/releases) sections. 
 
 ## Table of Contents
 
