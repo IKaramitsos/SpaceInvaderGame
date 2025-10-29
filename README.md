@@ -1,65 +1,26 @@
-# Alternative Space Invader Game
+# Space Invader Game
+This repository hosts the Space Invader Game, an educational “project” designed to teach key computer science concepts through game development using Squeak/Smalltalk. The project follows a “trojan horse” mindset, embedding core IT learning objectives such as object-oriented programming, event-driven mechanics and UI/UX design in an engaging and interactive game format.
 
-The alternative space invader game repository contains the code and runnable files for the exercise developed as part of the MSc Thesis: "Interactive Learning in IT: Using Alternative Object-oriented Language" at the University  of Patras. 
+The implementation is organized in a step-by-step structure with five parts, ranging from basic game environment and spaceship creation to more advanced features and customizations. Each part contains clear context, prerequisites, detailed workflow and challenges to encourage creative extensions and further understanding.
 
-It is used as a scaffolded, interactive game-based programming exercise built with Squeak/Smalltalk, designed to teach fundamental IT concepts and object-oriented programming through the development of the game and was inspired by the classic Space Invaders and the MIT Licensed development of Scott Gibson's implementation.
+Additional and more thorough educational content and explanation, including release versions containing base and extended code are available via the Wiki and Releases sections. 
 
-The exercise is aligned with a holistic educational framework and includes structured challenges for students. The repository comes with alignment with the MSc Thesis, which enables researches, students and educators to explore, run, extend the exercise. 
+## Table of Contents
 
-Detailed description and context about the implementation of the exercise is available in  the linked thesis at:
-[Provided in the near future](https://github.com/IKaramitsos/Alternative-Space-Invader-Game) 
+- [Part 1: Introduction to the space environment and spaceship](#part-1-introduction-to-the-space-environment-and-spaceship)
+- [Part 2: Enemies and mechanics](#part-2-enemies-and-mechanics)
+- [Part 3: Introduction to collision and shooting mechanism](#part-3-introduction-to-collision-and-shooting-mechanism)
+- [Part 4: UI creation and enhancements](#part-4-ui-creation-and-enhancements)
+- [Part 5: Extra features and customizations](#part-5-extra-features-and-customizations)
 
-## Files
+---
 
-`AlternativeSpaceInvader.st`, this file contains the Smalltalk source code for the Space Invader game exercise, it can be used to review the code as a more readable option before launching it in a Squeak environment.
+# Part 1: Introduction to the space environment and spaceship
 
-`SpaceInvader.rar`, this compressed file contains the Squeak image (`.image`) and changes file (`.changes`) necessary to run the exercise.
+# Part 2: Enemies and mechanics
 
-`SpaceInvaderVersion`, this folder contains the Smalltalk code needed to create the SpaceInvader Menu preloaded in the image `SpaceInvader_Menu.st`, the SpaceInvader Code of a final version of the game `SpaceInvader_Version_Code.smalltalk` and A RAR file `SpaceInvader_Version.rar` that contains the (`.image`) file, (`.changes`) file, two images (`.png`) for the Spaceship and enemies, as well as two (`.wav`) audio files for shooting and when the enemy is destroyed. 
+# Part 3: Introduction to collision and shooting mechanism
 
-The images and audio files must be in the same folder with the image for the game to load correctly .
+# Part 4: UI creation and enhancements
 
-### Game Structure (Base Code)
-
-| Class | Description |
-| --- | --- |
-| `SpaceInvader` | Main game window & controller |
-| `Ship` | Player sprite (controls/shoot) |
-| `Enemy` | Enemy sprite (moves back and forth) |
-| `Shot` | Bullet morph (detects collision) |
-| `Score` | Points tracker (updates display) |
-
-## Download and Run
-
-1. To download and run the exercise, first it is needed to download the latest zip file via github or clone the repository.
-`git clone https://github.com/IKaramitsos/Alternative-Space-Invader-Game.git`
-
-2. Install the [Squeak Smalltalk VM](https://squeak.org/downloads/) suitable for the platform/OS in use.
-
-3. To run the exercise:
-- Extract the `SpaceInvader.rar`.
-- Launch the Squeak VM and open the `SpaceInvader.image` file.
-- If the game isn't prelaunched, open a workspace, if it isn't as well available when launched, and run the following code to start:
-
-`SpaceInvader new openInWorld` and run the code (select the code and `ctrl+d` or use the Squeak's dropdown menu)
-- Spaceship can be be controlled with `arrow keys`, with `spacebar` spaceship shoots, `r` is set to restart enemies entities.
-
-All of those mechanics, keystrokes, look of the game can be changed based on the structured challenges set for university students.
-
-## Helpful Resources
-
-- [Squeak Documentation](https://squeak.org/documentation/)
-- [Smalltalk tutorial](https://learnxinyminutes.com/smalltalk/)
-
-## Cheatsheet
-
-The "Smalltalk Syntax Cheat Sheet" contains a grasp of all the fundamental syntax and knowledge of Smalltalk object-oriented language. It also contains parts of code used in the Space Invader game. A more extended version can be found in the Helpful Resource section above or using the following [Smalltalk Language Notes Cheatsheet](https://www.angelfire.com/tx4/cus/notes/smalltalk.html)
-
-<img width="1067" height="707" alt="Frame 1" src="https://github.com/user-attachments/assets/81044f77-faa7-44b7-818e-c29e403eb6f8" />
-
-### A look of the final version
-
-| Title | Screenshot |
-| --- | --- |
-| `SpaceInvader Menu` | <img width="349" height="248" alt="SpaceInvader_Menu" src="https://github.com/user-attachments/assets/c6a114a6-7d8f-4f9e-b166-e0fc3b279886" /> |
-| `SpaceInvader Game` | <img width="349" height="248" alt="SpaceInvader_Start" src="https://github.com/user-attachments/assets/46024926-e840-4d78-9e91-a830b9565638" /> |
+# Part 5: Extra features and customizations
