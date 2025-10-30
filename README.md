@@ -322,41 +322,120 @@ enemy delete
 - [ ] Challenge 2: Shot initialization has a plain default look. Change to a different type, either shape, color or image from the web. The modification can also be based on speed, shape or direction of shots.
 - [ ] Challenge 3: Test out the environment and code for the collisions created earlier. Add new visuals for better understanding.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Part 4: UI creation and enhancements
 
 ### Context and motivation:
 
+After the implementation of all the fundamental mechanics for the game to work as imaginable, this part will focus on how users implement UI and create visuals in the game environment. A must have feature to track down enemies defeated and hitting high scores that will unlock new feature probabilities is score.
+
 ### Prerequisites and learning objectives:
+
+Prerequisites for this part is the successful completion of the previous part.
+Post completion, users will:
+
+* Implement and display visually a score board component that will update in real-time.
+* Integrate lock logic for the score, to prevent manual interference. 
+* Use morph manipulation to control UI placement and style.
 
 ### Exercise Workflow:
 
+Interacting with the game so far provides the satisfaction of building a functional part that seems like a complete game. But what is actually missing? Providing real-time feedback to the player while playing and destroying enemies really gives a purpose. That’s why a score board will be created, which will update and display the score based on how many enemies were killed. The first step is to create our Score class. This time Textmorph subclass will be used which can display letters and numbers, which might be helpful later on.
+
+Score Class & Initialize
+```smalltalk
+TextMorph subclass: #Score
+instanceVariableNames: 'points'
+classVariableNmaes: ""
+poolDictionaries: ""
+category: 'SpaceInvader'
+```
+```smalltalk
+initialize
+super initialize.
+points := 0.
+```
+The score needs to update frequently so a way of receiving points and updating needs to be made. Points which is a getter/accessor(setter) method and points: anInteger updater method will be made to solve this problem.
+```smalltalk
+points
+^ points
+```
+```smalltalk
+points: anInteger
+points := points + anInteger.
+```
+
+Except for the logic behind the update of score, an actual display score board must be implemented in the game environment. A displayPoints method will be created which will get the points from the method we created. In this method we will set the font and the size of the text. Test which font and size fits better in the game environment. In the following example a more retro looking font will be used names #Atlanta. After the creation of the displayPoints method points: anInteger must be updated as displayPoints must be called there as well. Last but not least, initialize will be updated for the text color, call of the method, the extent of it and a “lock” function which helps the score not be manually changed for cheating high scores or score manipulation in general.
+
+Score>>displayPoints implementation and methods updated
+```smalltalk
+displayPoints
+self
+string: points printString
+fontName: #Atlanta
+size: 22
+```
+```smalltalk
+points: anInteger
+points := points + anInteger.
+self displayPoints
+```
+```smalltalk
+initialize
+super initialize.
+points := 0.
+self lock.
+self textColor: Color green.
+self displayPoints.
+self extent: 90 @ 0.
+```
+The final step is to initialize our Scoreboard in the main game class as we did with initializeShip, initializeEnemies etc. Same goes for the score. Naming similar methods helps for better code organization, that’s why the name of the method will be initializeScore.
+
+SpaceInvader>>initializeScore
+```smalltalk
+initializeScore
+score := Score new.
+score position: self position + (10 @ 10).
+self addMorph: score
+```
+
+After creating the method and updating the initialize method of the main Space Invader game, a visual of the score is finally in the game environment. But problems don’t actually stop there. Even if enemies are destroyed, the score isn’t counted. That’s why there is not an actual way of communication between the Shot class and the Score class. To fix this issue a modification of Shot>>hitEnemy method and an implementation of a points: anInteger method is needed to be added in the SpaceInvader main class.
+
+Adding the the following line of code at Shot>hitEnemy method: “owner points:100” which will add 100 points to the score after the successfully destruction of an enemy, and also adding the following we fix the issue:
+
+```smalltalk
+points: anInteger
+score points: anInteger
+```
+
 ### Proggression-Extensions:
+
+- [ ] Challenge 1: The score layout of the game is functional and represents what it actually needs to. Provide a goal, as a high score or a certain point to hit, which when it is achieved a winning screen pops out.
+- [ ] Challenge 2: Based on the logic and creation of the score, implement a life for player UI, a health bar, or anything that fits the SpaceInvader version that’s been worked on.
+
 
 # Part 5: Extra features and customizations
 
 ### Context and motivation:
 
+In all of the earlier parts building a solid structure with implementation of different aspects of object oriented programming, and other pillars IT were the main goal. Users had the opportunity to grasp all of those different aspects and fulfill them based on challenges and step-by-step following the instructions. In the last part of the exercise, users will implement their personal features and customizations making their unique space invader game by being provided with options/challenges without being absolute, making this whole experience more creative.
+
 ### Prerequisites and learning objectives:
+
+Prerequisites for this part is the successful completion of the previous parts and having a solid and functional game so far.
+Post completion, users will:
+
+* Have created their unique Space Invader game.
 
 ### Exercise Workflow:
 
+Successfully completing the score and possible challenges, it is time to have a unique approach to the last part of the exercise. Choosing up to two or three features implementations in the version of Space Invader developed so far, provide a final unique version of the game. Challenges are not mandatory and can be modified accordingly.
+
 ### Proggression-Extensions:
+
+- [ ] Challenge 1: After testing out shooting and gameplay, when all of the enemies are shot down there are not any left. Create a logic of reappearing Enemies after a certain time or stage system.
+- [ ] Challenge 2: If all challenges were complete on Part 4, and the player’s spaceship has a health bar with lifes, modify the enemies to shoot at the player and the logic of losing.
+- [ ] Challenge 3: The original version of Space Invader had an Ufo coming from the top of the screen at different stages and shooting our player’s spaceship. Recreate this by adding it to the unique version that is worked on.
+- [ ] Challenge 4: Having no sound in a game is a doll. Add sound effects, it can be anything from sound while shooting, destroying enemies, music while playing or winning-losing games.
+- [ ] Challenge 5: If enemies are shooting at the player’s spaceship, create new objects for the player to take cover.
+- [ ] Challenge 6: UI isn’t just a way of adding score and lives for the player’s spaceship. Create a menu UI which will give the option to the player to, mute if music is playing or turn off sound effects, restart the game and pause.
+
