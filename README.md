@@ -8,10 +8,30 @@ Additional and more thorough educational content and explanation, including rele
 ## Table of Contents
 
 - [Part 1: Introduction to the space environment and spaceship](#part-1-introduction-to-the-space-environment-and-spaceship)
+  - [Context and Motivation](#context-and-motivation)
+  - [Prerequisites and learning objectives](#prerequisites-and-learning-objectives)
+  - [Exercise Workflow:](#exercise-workflow)
+  - [Proggression-Extensions:](#proggression-extensions)
 - [Part 2: Enemies and mechanics](#part-2-enemies-and-mechanics)
+  - [Context and Motivation](#context-and-motivation-1)
+  - [Prerequisites and learning objectives](#prerequisites-and-learning-objectives-1)
+  - [Exercise Workflow:](#exercise-workflow-1)
+  - [Proggression-Extensions:](#proggression-extensions-1)
 - [Part 3: Introduction to collision and shooting mechanism](#part-3-introduction-to-collision-and-shooting-mechanism)
+  - [Context and Motivation](#context-and-motivation-2)
+  - [Prerequisites and learning objectives](#prerequisites-and-learning-objectives-2)
+  - [Exercise Workflow:](#exercise-workflow-2)
+  - [Proggression-Extensions:](#proggression-extensions-2)
 - [Part 4: UI creation and enhancements](#part-4-ui-creation-and-enhancements)
+  - [Context and Motivation](#context-and-motivation-3)
+  - [Prerequisites and learning objectives](#prerequisites-and-learning-objectives-3)
+  - [Exercise Workflow:](#exercise-workflow-3)
+  - [Proggression-Extensions:](#proggression-extensions-3)
 - [Part 5: Extra features and customizations](#part-5-extra-features-and-customizations)
+  - [Context and Motivation](#context-and-motivation-4)
+  - [Prerequisites and learning objectives](#prerequisites-and-learning-objectives-4)
+  - [Exercise Workflow:](#exercise-workflow-4)
+  - [Proggression-Extensions:](#proggression-extensions-4)
 
 > [!TIP]
 > Make sure that the Squeak Environment  is set up and running correctly before starting the exercise.
