@@ -237,17 +237,126 @@ self right: self right + 10.
 - [ ] **Challenge 4:** An extended look of the enemies is needed. Replace the enemies with a different shape/color or image from the web. Enemies' size must be based on a logical ratio with the game environment.
 
 
-
-
-
-
-
-
-
-
-
 # Part 3: Introduction to collision and shooting mechanism
+
+### Context and motivation:
+
+In this part of the exercise, users will create the two fundamental mechanics that will give life to the game, the collision mechanic between shots and enemies and the shooting mechanism of the player’s spaceship. There will be step-by-step modifications on already built methods and users will explore the logic behind those fundamental mechanics for the game.
+
+### Prerequisites and learning objectives:
+
+Prerequisites for this part is the successful completion of the previous part.
+Post completion, users will:
+
+* Grasp the shooting logic and reusability of methods by implementing a shot class and bind firing to a keystroke
+* Handle and detect collisions between shots and enemies
+* Understand event-driven programming and interaction logic/methods
+* Refactor movement and collision logic
+
+### Exercise Workflow:
+
+Following the last part in which enemies and basic mechanics were created, now it is time to enrich the game with two more mechanics, collision and shooting. The first step will be to create what is needed for shooting. Based on what was learned so far, a new class needs to be created, which in that case will be called shot, introduce it to the game, initialize it and create the method.
+The shot class will use the EllipseMorph, the shoot method will keep the same logic to position it correctly, and so far about initializing the shot each self, it can have any shape or color so it can be modified.
+
+Shot Class, initialize and method mechanism
+```smalltalk
+EllipseMorph subclass: #Shot
+intanceVariableNames: ""
+classVariableNames: ""
+poolDictionaries: ""
+category: 'SpaceInvader'
+```
+```smalltalk
+initialize
+super initialize.
+self color: Color red.
+self extent: 10 @ 10
+```
+```smalltalk
+shoot
+| shot |
+shot := Shot new.
+shot position: self topCenter - shot bottomCenter.
+owner addMorph: shot
+```
+
+To get a visual of our shots that were initialized, a keystroke must be appointed for the spaceship to actually shoot. Heading back to the method, set a keyString for the shoot method. After saving and running the code, even if the shot is visible it won't move. Try to fix that. The code that is needed has the same logic as the one used in the previous part of the enemies movement. 
+
+Except for visually presenting the shot it is needed to actually have a purpose. Right now, in the environment, shots pass through the enemies. That is why collisions haven’t been introduced yet. It is time to create it. The code for creating collisions and destroying the enemies can be separated into different parts. The parts are:
+1. Finding the enemy.
+2. Shot actually hits the enemy.
+3. Shot is removed when the collision with the enemy happens.
+4. Remove the “destroyed” enemy from the game.
+
+Starting off the first part “Finding the enemy”, it is needed to find a way that it can return all the child morphs of Enemy, that will include subclasses and in the end it will also add it into the main game class SpaceInvader. To do so, an “enemies” method will be created. If the enemies that were modified are polymorphic, a change in the type of isMemberOf: to isKindOf: so it can support it.
+
+```smalltalk
+enemies
+^self submorphs select: [:morph | morph isMemberOf: Enemy]
+```
+The next part is to determine if the shot hit the enemy. For that a refactor in the move method created in Shot class is needed. Refactoring assists with a cleaner and easier way of understanding, by implementing new methods. The new methods that will be implemented are called checkContact and hitEnemy. The way the methods are called is a great way of understanding code and methods before even reading the actual code. CheckContact is used to determine whether a shot should be deleted based on its position or interaction with another object in the game which in the specific case is the enemy. hitEnemy which will be called inside checkContact is a method which will delete the enemy when the shot hits.
+
+```smalltalk
+move
+self position: (self position) - (0@5).
+self checkContact.
+```
+```smalltalk
+checkContact
+self top < owner top ifTrue: [ ^self delete ].
+owner enemies do: [:enemy | (self bounds intersects: enemy bounds)
+  ifTrue: [self hitEnemy: enemy.
+    ^self]]
+```
+```smalltalk
+hitEnemy: enemy
+self delete.
+enemy delete
+```
+> [!TIP]
+> A great way of testing thoroughly when the live code squeak environment is used, are keystrokes. A keystroke of initializeEnemies can be made in the handlekeystroke method to assist is: “keyString = ‘r’ ifTrue: [self initializeEnemies].”
+
+### Proggression-Extensions:
+
+- [ ] Challenge 1: The implementation of shooting in the Space Invader game has no particular rule, making the spaceship shoot an unlimited number of shots. Create a rule, restriction of numbers of shots which are active or a timeout of each shot being fired.
+- [ ] Challenge 2: Shot initialization has a plain default look. Change to a different type, either shape, color or image from the web. The modification can also be based on speed, shape or direction of shots.
+- [ ] Challenge 3: Test out the environment and code for the collisions created earlier. Add new visuals for better understanding.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Part 4: UI creation and enhancements
 
+### Context and motivation:
+
+### Prerequisites and learning objectives:
+
+### Exercise Workflow:
+
+### Proggression-Extensions:
+
 # Part 5: Extra features and customizations
+
+### Context and motivation:
+
+### Prerequisites and learning objectives:
+
+### Exercise Workflow:
+
+### Proggression-Extensions:
