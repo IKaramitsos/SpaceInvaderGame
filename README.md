@@ -111,12 +111,140 @@ Figure 3: SpaceInvader Final Part 1 Look
 
 ### Proggression-Extensions:
 
-- [ ] Challenge 1: An extended look of the spaceship is needed. Replace the spaceship with a different shape/color or image from the web. Spaceship size must be based on a logical ratio with the game environment.
-- [ ] Challenge 2: The environment at the current state is really plain and simple. Enrich the environment by changing the background, adding borders, or anything providing a clean look of a SpaceInvader game.
-
-
+- [ ] **Challenge 1:** An extended look of the spaceship is needed. Replace the spaceship with a different shape/color or image from the web. Spaceship size must be based on a logical ratio with the game environment.
+- [ ] **Challenge 2:** The environment at the current state is really plain and simple. Enrich the environment by changing the background, adding borders, or anything providing a clean look of a SpaceInvader game.
 
 # Part 2: Enemies and mechanics
+
+### Context and motivation:
+
+This part of the exercise introduces the creation of enemies and the mechanics needed for the game to be functional that will be implemented to the ships. Those functionalities are the movement and the logic behind it. Users will create the enemy and their class, initialize enemies in certain positions and implement the logic of movement using the step method. Also the mechanics of the main ship which the player will use will be created. A set of challenges will be available after completion.
+
+### Prerequisites and learning objectives:
+
+Prerequisites for this part is the successful completion of the previous part, basic familiarity with the Squeak environment and understanding of methods.
+Post completion, users will:
+* Initialize enemies at a certain position and their mechanisms.
+* Implement keystrokes and the movement logic for the player’s spaceship using event methods and handlers.
+* Grasp the inheritance logic in OOP.
+
+### Exercise Workflow:
+
+After the initialization of the environment and the player’s ship, it is time to give life and purpose to the game by adding moving mechanisms.
+The first step to implement that, is to introduce four new methods which will help with the focus in our game window. Those methods are the following:
+
+1. **handlesMouseDown:** Provide the Morphic framework how to handle pressed mouse down events.
+2. **handlesMouseOver:** Provide the Morphic framework how to handle events when the mouse cursor is over the game screen.
+3. **mouseEnter/mouseLeave:** Provide the Morphic framework on what to do when the mouse is over/not over the game screen.
+
+> [!TIP]
+> Names should convey the purpose or role of the Methods/Variables/Function/etc. Avoid cryptic abbreviations that might be hard for other devs to understand (or even your future self).
+
+Those methods, which are really easy to understand based on their name, need to be initialized in our main game’s class to be used properly, which is the SpaceInvader class. Initialize all four methods one by one:
+
+```smalltalk
+handlesMouseDown: anEvent
+^false
+```
+```smalltalk
+handlesMouseOver: anEvent
+^true
+```
+```smalltalk
+MouseEnter: anEvent
+anEvent hand newKeyboardFocus: self
+```
+```smalltalk
+MouseLeave: anEvent
+anEvent hand releaseKeyboardFocus: self
+```
+
+After successfully creating those methods, keystrokes must be assigned, so the player can move the spaceship. To achieve that a method handling the keystrokes and the keystrokes themselves must be created. Only the method is mandatory to follow, keystrokes can be different. Handlekeystroke method will be initialized in the main game class and the keystrokes will be handled in the ship class.
+```smalltalk
+handleKeystroke: anEvent
+| keyString |
+keyString := anEvent keyString asLowercase.
+ship keystroke: keyString.
+```
+The keystrokes as stated, can be different in each game version, a classic arrow keys movement will be presented below that is not mandatory to follow.
+```smalltalk
+keystroke: keyString
+keyString = '<left>' ifTrue: [self moveLeft].
+keyString = '<right>' ifTrue: [self moveRight].
+keyString = '<up>' ifTrue: [self moveUp].
+keyString = '<down>' ifTrue: [self moveDown]
+```
+
+After saving and running the code, a pop up window is visible. This window is called a pre-debugger window that helps by showcasing errors, debugging the game, testing the code and running it. The reason we get an error is the methods stated, “self moveLeft,moveRight,moveUp,moveDown”, are nowhere to be found.
+
+Moving methods for objects can be stated in many ways. For this exercise we will follow a simple “self axis movement”.
+```smalltalk
+moveUp
+self y: self y + 5.
+owner changed
+```
+```smalltalk
+moveDown
+self y: self y - 5.
+owner changed
+```
+```smalltalk
+moveLeft
+self x: self x - 5.
+owner changed
+```
+```smalltalk
+moveRight
+self x: self x + 5.
+owner changed
+```
+Enemies implementation to game follows the same class and initialization method with our Ship, by using RectangleMorph and color, borderColor and extend. After each new class insertion to game it is needed to call it and initialize it to the main class as follows so it can be visible to the game:
+
+SpaceInvader>>InitializeEnemies
+```smalltalk
+initializeEnemies
+|enemy|
+enemy := Enemy new.
+enemy position: self position + (100@100).
+self addMorph: enemy
+```
+After creating the initializeEnemies implement it to the already created initialize of the SpaceInvader class.
+
+There is no need to run the code each time. Squeak provides a way to add the enemy class to “Exploring the morph" by “middle clicking” the game, selecting the tool icon and selecting the option “explore morph”.
+In this new window there are available all the game’s assets, morphs, colors and information. In the text field available write “self initializeEnemies” and “do it”.
+
+The final step to give life to the enemy object is to add movement. To do so, a step, stepTime and move method will be implemented. All three give out their possible functionality.
+```smalltalk
+step
+self move
+```
+```smalltalk
+stepTime
+^ 1500
+```
+```smalltalk
+move
+self right: self right + 10.
+(self right > owner right)
+  ifTrue: [self left: self left - 10]
+```
+
+### Proggression-Extensions:
+
+- [ ] **Challenge 1:** After the movement methods initialization in the Player’s Ship, and testing it out, the ship can move outside of the game environment boundaries. Fix that problem and keep only the movement method mandatory to the personal game version chosen. 
+- [ ] **Challenge 2:** Movement methods for the Enemy are having an issue as well. After reaching the right border, the enemy stops moving. (Tip: A good technique is to set an instance variable in the Enemy class and implement it in the already created methods.)
+- [ ] **Challenge 3:** In this part only one enemy is visible. Change the number of enemies and their movement logic as it seems fit for your personal version of the game. (It can be anything from different stepping for increased difficulty, to zig zag movement logic or axis)
+- [ ] **Challenge 4:** An extended look of the enemies is needed. Replace the enemies with a different shape/color or image from the web. Enemies' size must be based on a logical ratio with the game environment.
+
+
+
+
+
+
+
+
+
+
 
 # Part 3: Introduction to collision and shooting mechanism
 
