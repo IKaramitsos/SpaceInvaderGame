@@ -1,5 +1,5 @@
-# Space Invader Game
-This repository hosts the Space Invader Game, an educational “project” designed to teach key computer science concepts through game development using Squeak/Smalltalk. The project follows a “trojan horse” mindset, embedding core IT learning objectives such as object-oriented programming, event-driven mechanics and UI/UX design in an engaging and interactive game format.
+# Space Invaders Game
+This repository hosts the Space Invaders Game, an educational “project” designed to teach key computer science concepts through game development using Squeak/Smalltalk. The project follows a “trojan horse” mindset, embedding core IT learning objectives such as object-oriented programming, event-driven mechanics and UI/UX design in an engaging and interactive game format.
 
 The implementation is organized in a step-by-step structure with five parts, ranging from basic game environment and spaceship creation to more advanced features and customizations. Each part contains clear context, prerequisites, detailed workflow and challenges to encourage creative extensions and further understanding.
 
@@ -65,7 +65,7 @@ In this part a browser is needed and will be used which is essential in the cate
 Figure 1: Creating the SpaceInvader category in the System Browser
 </p>
 
-Category’s functionality is to group the code together as well as provide assistance that will be visible on later parts. As it can be noticed in the lowest part of the system browser(image) there is a comment about the Space Invader class.
+Category’s functionality is to group the code together as well as provide assistance that will be visible on later parts. As it can be noticed in the lowest part of the system browser(image) there is a comment about the Space Invaders class.
 > [!TIP]
 > While building/programming anything in the Squeak environment, using comments will assist both the programmer as well as the people that will be sharing or presenting the code so it can be understandable even if a long time has passed.
 
@@ -77,7 +77,7 @@ super initialize.
 self position: 100@100.
 self extent: 640@480.
 self color: Color black.
-self setNameTo: 'Space Invader'
+self setNameTo: 'Space Invaders'
 ```
 
 Save and run the code to get the first visual representation of the game. The position and extent are not mandatory numbers, so it can be possible to change accordingly.
@@ -107,7 +107,7 @@ super initialize.
 self position: 100@100.
 self extent: 640@480.
 self color: Color black.
-self setNameTo: 'Space Invader'.
+self setNameTo: 'Space Invaders'.
 self initializeShip.
 ```
 
@@ -338,7 +338,7 @@ enemy delete
 
 ### Proggression-Extensions:
 
-- [ ] Challenge 1: The implementation of shooting in the Space Invader game has no particular rule, making the spaceship shoot an unlimited number of shots. Create a rule, restriction of numbers of shots which are active or a timeout of each shot being fired.
+- [ ] Challenge 1: The implementation of shooting in the Space Invaders game has no particular rule, making the spaceship shoot an unlimited number of shots. Create a rule, restriction of numbers of shots which are active or a timeout of each shot being fired.
 - [ ] Challenge 2: Shot initialization has a plain default look. Change to a different type, either shape, color or image from the web. The modification can also be based on speed, shape or direction of shots.
 - [ ] Challenge 3: Test out the environment and code for the collisions created earlier. Add new visuals for better understanding.
 
@@ -418,7 +418,7 @@ score position: self position + (10 @ 10).
 self addMorph: score
 ```
 
-After creating the method and updating the initialize method of the main Space Invader game, a visual of the score is finally in the game environment. But problems don’t actually stop there. Even if enemies are destroyed, the score isn’t counted. That’s why there is not an actual way of communication between the Shot class and the Score class. To fix this issue a modification of Shot>>hitEnemy method and an implementation of a points: anInteger method is needed to be added in the SpaceInvader main class.
+After creating the method and updating the initialize method of the main Space Invaders game, a visual of the score is finally in the game environment. But problems don’t actually stop there. Even if enemies are destroyed, the score isn’t counted. That’s why there is not an actual way of communication between the Shot class and the Score class. To fix this issue a modification of Shot>>hitEnemy method and an implementation of a points: anInteger method is needed to be added in the SpaceInvader main class.
 
 Adding the the following line of code at Shot>hitEnemy method: “owner points:100” which will add 100 points to the score after the successfully destruction of an enemy, and also adding the following we fix the issue:
 
@@ -437,24 +437,24 @@ score points: anInteger
 
 ### Context and motivation:
 
-In all of the earlier parts building a solid structure with implementation of different aspects of object oriented programming, and other pillars IT were the main goal. Users had the opportunity to grasp all of those different aspects and fulfill them based on challenges and step-by-step following the instructions. In the last part of the exercise, users will implement their personal features and customizations making their unique space invader game by being provided with options/challenges without being absolute, making this whole experience more creative.
+In all of the earlier parts building a solid structure with implementation of different aspects of object oriented programming, and other pillars IT were the main goal. Users had the opportunity to grasp all of those different aspects and fulfill them based on challenges and step-by-step following the instructions. In the last part of the exercise, users will implement their personal features and customizations making their unique Space Invaders game by being provided with options/challenges without being absolute, making this whole experience more creative.
 
 ### Prerequisites and learning objectives:
 
 Prerequisites for this part is the successful completion of the previous parts and having a solid and functional game so far.
 Post completion, users will:
 
-* Have created their unique Space Invader game.
+* Have created their unique Space Invaders game.
 
 ### Exercise Workflow:
 
-Successfully completing the score and possible challenges, it is time to have a unique approach to the last part of the exercise. Choosing up to two or three features implementations in the version of Space Invader developed so far, provide a final unique version of the game. Challenges are not mandatory and can be modified accordingly.
+Successfully completing the score and possible challenges, it is time to have a unique approach to the last part of the exercise. Choosing up to two or three features implementations in the version of Space Invaders developed so far, provide a final unique version of the game. Challenges are not mandatory and can be modified accordingly.
 
 ### Proggression-Extensions:
 
 - [ ] Challenge 1: After testing out shooting and gameplay, when all of the enemies are shot down there are not any left. Create a logic of reappearing Enemies after a certain time or stage system.
 - [ ] Challenge 2: If all challenges were complete on Part 4, and the player’s spaceship has a health bar with lifes, modify the enemies to shoot at the player and the logic of losing.
-- [ ] Challenge 3: The original version of Space Invader had an Ufo coming from the top of the screen at different stages and shooting our player’s spaceship. Recreate this by adding it to the unique version that is worked on.
+- [ ] Challenge 3: The original version of Space Invaders had an Ufo coming from the top of the screen at different stages and shooting our player’s spaceship. Recreate this by adding it to the unique version that is worked on.
 - [ ] Challenge 4: Having no sound in a game is a doll. Add sound effects, it can be anything from sound while shooting, destroying enemies, music while playing or winning-losing games.
 - [ ] Challenge 5: If enemies are shooting at the player’s spaceship, create new objects for the player to take cover.
 - [ ] Challenge 6: UI isn’t just a way of adding score and lives for the player’s spaceship. Create a menu UI which will give the option to the player to, mute if music is playing or turn off sound effects, restart the game and pause.
